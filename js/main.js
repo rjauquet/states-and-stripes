@@ -53,7 +53,13 @@ var states = [
 
 function buildStatesAndStripes(states, key){
     
+    var svg = document.getElementById('flag');
+
     states.sort(function(a,b) { return (a[key] > b[key]) ? 1 : ((b[key] > a[key]) ? -1 : 0); } );
+
+    var bBox = svg.getBBox();
+    console.log('XxY', bBox.x + 'x' + bBox.y);
+    console.log('size', bBox.width + 'x' + bBox.height);
 
     var stateGroup = document.getElementById('states');
     var rowlen = 6;
