@@ -61,16 +61,19 @@ function buildStatesAndStripes(states, key){
     var coli = 0;
     var basex = 35.6;
     var basey = 22.65;
+    //var stateSize = 61.6;
+    var stateSize = 55;
     var space = 126;
-    var stateSize = 61.6;
     for(var i=0; i<states.length; i++){
 
         var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
         text.setAttributeNS(null, 'x', (basex + space*rowi + (rowlen === 6 ? 0:stateSize)));
-        text.setAttributeNS(null, 'y', (basey + stateSize*coli));
+        text.setAttributeNS(null, 'y', (basey + stateSize*(coli+1)));
         text.setAttributeNS(null, 'fill', 'white');
         text.setAttributeNS(null, 'font-family', 'StateFaceRegular');
         text.setAttributeNS(null, 'font-size', '61.6px');
+        text.setAttributeNS(null, 'vertical-align', 'text-top');
+        text.setAttributeNS(null, 'text-align', 'center');
         
         var textNode = document.createTextNode(states[i].code);
         text.appendChild(textNode);
