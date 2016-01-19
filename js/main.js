@@ -96,5 +96,6 @@ function buildStatesAndStripes(states, key){
 } 
 
 (function (){
-    buildStatesAndStripes(states, 'name');
+    //buildStatesAndStripes(states, 'name');
+    buildStatesAndStripes(states, 'joined');
 })();
